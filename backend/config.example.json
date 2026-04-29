@@ -1,0 +1,9 @@
+{
+    "DB_HOST": "localhost",
+    "DB_USER": "postgres",
+    "DB_PASS": "postgres",
+    "DB_NAME": "les_brodeurs",
+    "DB_SOCKET": "",
+    "PORT": "5432",
+    "IP_API": "127.0.0.1"
+}

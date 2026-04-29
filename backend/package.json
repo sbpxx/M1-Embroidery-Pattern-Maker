@@ -1,0 +1,26 @@
+{
+  "name": "broderie-backend",
+  "version": "1.0.0",
+  "description": "Broderie API server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@azure/cognitiveservices-computervision": "^8.2.0",
+    "@azure/ms-rest-azure-js": "^2.1.0",
+    "@azure/ms-rest-js": "^2.7.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "jszip": "^3.10.1",
+    "nodemailer": "^6.9.16",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

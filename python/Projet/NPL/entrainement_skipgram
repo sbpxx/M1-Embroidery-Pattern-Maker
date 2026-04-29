@@ -1,0 +1,25 @@
+import gensim
+from gensim.models import Word2Vec
+from gensim.utils import simple_preprocess
+import multiprocessing
+
+# Fonction pour prétraiter et tokeniser le texte
+def preprocess_text(text):
+    return simple_preprocess(text)
+
+# Lecture du fichier texte
+with open('wiki_texts_sample.txt', 'r', encoding='utf-8') as f:
+    # Lire les 100000 premières lignes
+    lines = f.readlines()[:100000]
+
+# Tokenisation de chaque ligne
+sentences = [preprocess_text(line) for line in lines]
+
+# Nombre de coeurs à utiliser (nombre de coeurs logiques du CPU)
+num_workers = multiprocessing.cpu_count()
+
+# Entraînement du modèle Word2Vec sur les 10000 premiers documents
+model = Word2Vec(sentences, vector_size=200, window=5, min_count=5, workers=num_workers, sg=1)
+
+# Sauvegarde du modèle
+model.save("wikipedia_word2vec_docs.model")

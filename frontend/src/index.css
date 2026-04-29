@@ -1,0 +1,3158 @@
+/* General Styles */
+* {
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    list-style: none;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Ensure body takes full height */
+}
+
+
+/* Navbar Styles */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+    position: fixed; /* Make navbar fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other elements */
+}
+
+.navbar .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push nav-links to the right */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.li_nav {
+    margin-top: 0.5rem; /* Adjust this value as needed */
+}
+
+.nav-links ul li {
+    color: #fff;
+    padding: 0.5rem 1rem; /* Add padding for better click area */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.nav-links ul li:hover {
+    background-color: #555; /* Change background color on hover */
+    transform: translateY(-3px); /* Slightly lift the element */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.nav-links ul li:active {
+    background-color: #777; /* Change background color on click */
+    transform: translateY(0); /* Reset lift on click */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slightly reduce shadow on click */
+}
+
+.btn_login, .btn_compte {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-shrink: 0; /* Prevent button from shrinking */
+    margin-right: 3rem; /* Decale le bouton de connexion */
+}
+
+#accountBtn {
+    display: none;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    right: 45px;
+    height: 100px;
+    width: 120px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown_menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown_item-1 {
+    transform-origin: top center;
+    animation: translateX 300ms 0ms ease-in-out forwards;
+}
+
+.dropdown_item-2 {
+    transform-origin: top center;
+    animation: translateX 300ms 60ms ease-in-out forwards;
+}
+
+.dropdown_item-3 {
+    transform-origin: top center;
+    animation: translateX 300ms 120ms ease-in-out forwards;
+}
+
+
+
+@keyframes translateX {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    80% {
+        transform: translateX(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+/*Accueil*/
+
+/* Styles for the welcome section */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the text */
+    padding: 2rem; /* Add padding for spacing */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 3rem auto 2rem auto; /* Add 1rem to the top margin, center the div horizontally */
+    max-width: 1200px; /* Limit the width */
+}
+
+.welcome h1 {
+    font-size: 2.5rem; /* Larger font size for the heading */
+    font-weight: bold; /* Bold font weight */
+    color: #333; /* Darker text color */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.welcome p {
+    font-size: 1.25rem; /* Larger font size for the paragraph */
+    color: #666; /* Slightly lighter text color */
+    margin-bottom: 0; /* Remove default margin */
+}
+
+/* Styles for the options section */
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 1rem; /* Space between items */
+    margin-top: 2rem; /* Space above the options section */
+}
+
+.option {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(33.333% - 2rem); /* Make items scalable */
+    min-width: 250px; /* Ensure a minimum width */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.option:hover {
+    transform: translateY(-5px); /* Slightly lift the element on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.option h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.option p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    margin: 10px auto; /* Center the text */
+}
+
+.option a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition */
+    margin-top: 1rem; /* Space above the button */
+}
+
+.option a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#option-already-login {
+    display: none;
+}
+
+
+
+/* Styles for the carousel container */
+.contenair-carousel {
+    height: 500px; /* Set the height of the container to 500px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative; /* Ensure the carousel is positioned relative to this container */
+    min-height: 300px; /* Set a minimum height */
+    min-width: 100em; /* Set a minimum width */
+}
+
+/* Styles for the carousel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Use the full height of the container */
+    overflow: hidden;
+    position: relative; /* Ensure images are positioned relative to this container */
+}
+
+.carousel img {
+    position: absolute;
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Use the full height of the container */
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 10px;
+    transition: transform 1s, left 1s, z-index 1s; /* Smooth transition */
+}
+
+.carousel img.center {
+    transform: scale(1.5); /* Enlarge the image */
+    z-index: 3; /* Bring the center image to the front */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .option {
+        flex: 1 1 calc(50% - 2rem); /* Adjust to two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .option {
+        flex: 1 1 100%; /* Adjust to one column on very small screens */
+    }
+}
+/*Import*/
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    height: calc(100vh - 4rem); /* Adjust height to account for navbar */
+    padding: 1rem;
+    margin-top: 2rem; /* Add margin to avoid content being hidden behind navbar */
+}
+
+/* Main Container */
+.container {
+    display: flex;
+
+    align-items: stretch; /* Ensure children take full height */
+    width: 100%;
+    height: auto; /* Allow container to grow */
+    padding-top: 2rem; /* Add padding to the top */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 30%; /* Adjusted to 30% */
+    background-color: #f4f4f4;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/* FENETRE SAUVEGARDE */
+
+
+.modalWr, .modalW {
+   
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 10;
+}
+
+.modalWr input, .modalW input {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modalW textarea, .modalW textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalWr input[type="password"] ,.modalW input[type="text"],input[type="password"],input[type="email"] {
+    height: 50px;
+    font-size: 15px;
+}
+
+.tags-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espace entre les lignes */
+    margin-bottom: 1rem;
+}
+
+.modalW h2 {
+    margin-bottom: 1rem;
+}
+
+.modalW h3 {
+    margin-bottom: 0.5rem;
+}
+
+#textDesc {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 100px;
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    min-width: 100%;
+    max-height: 300px;
+    resize: vertical;
+    min-height: 100px;
+
+}
+
+.tags-row {
+    display: flex;
+    gap: 1rem; /* Espace entre les champs de saisie */
+}
+.tags-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.modal-buttons button {
+margin-left: 10px;
+padding: 0px 20px;
+width: 48%;
+cursor: pointer;
+}
+
+.cancelBtn {
+    background-color: #f44336; 
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cancelBtn:active {
+    background-color: white;
+    color: #f44336;
+    border-color: #f44336;
+}
+
+
+
+.resetbtn,.forgotbtn,.login,.register,.uploadBtn {
+    background-color: #4CAF50; 
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.resetbtn:active,.forgotbtn:active ,.login:active,.register:active, .uploadBtn:active {
+    background-color: white;
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+#loader-container {
+    display: none; /* Masquer par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Assurez-vous que le loader est au-dessus des autres éléments */
+}
+
+#loader-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 999; /* Assurez-vous que le fond est derrière le loader */
+}
+
+
+#longCat {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	max-height: 50%;
+	max-width: 50%;
+    z-index: 1001; /* Assurez-vous que le SVG est au-dessus du fond */
+
+}
+
+/* FENETRE CONNEXION */
+/* Styles pour les modals */
+.modal-login, .modal-register, .modal-save{
+    display: none; /* Masquer par défaut */
+    position: fixed;
+    z-index: 1000; /* Z-index élevé pour afficher le modal au-dessus du reste de la page */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles pour les images */
+.grid-container img {
+    transition: filter 0.3s ease; /* Transition pour l'effet de filtre */
+}
+
+/* Empêcher l'effet de gris sur les images */
+.grid-container img.no-grayscale {
+    filter: none !important; /* Désactiver le filtre */
+}
+
+/* Autres styles */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.remember-me {
+    display: inline-flex;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.checkbox {
+    margin-right: 8px;
+    accent-color: #007bff; 
+    border-radius: 50%; 
+}
+
+.forgot-password {
+    color: #007bff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.register-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.register_link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register_link:hover {
+    text-decoration: underline;
+}
+
+.login-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.login_link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login_linkf:hover {
+    text-decoration: underline;
+}
+
+.login_link:hover {
+    text-decoration: underline;
+}
+
+/* Drop Area Styles */
+#main-content {
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+#image-container {
+    width: 1200px;
+    height: 600px;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+#save {
+    float: right; 
+    margin-top: 10px;
+}
+
+#fileInput {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Result Styles import */
+
+/* TOOL BAR */
+#toolbar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+#toolbar h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* divs parametres */
+
+.parameter {
+    margin-bottom: 20px;
+}
+
+.parameter label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* inputs toolbar */
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Bouttons toolbar */
+
+
+
+
+.tb_buttons button {
+    width: 80%; 
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tb_buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+.tb_buttons button:hover {
+    background-color: #45a049;
+}
+
+
+
+#resultPatron {
+    display: none;
+}
+
+.result {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    text-align: center;
+}
+
+.result h2 {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.result-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.result-image img {
+    width: 85%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-text p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Styles for import page */
+@media (max-width: 1568px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #toolbar {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    #main-content {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .result {
+        width: 100%;
+    }
+
+    .result-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result-text {
+        max-width: 100%;
+    }
+
+          #image-container {
+            width: 90%; /* Largeur à 90% de la largeur de la page */
+            height: calc(90vw * 0.5); /* Hauteur à 50% de la largeur (90% * 0.5) */
+            border: 2px dashed #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        #image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajuster l'image pour couvrir le conteneur */
+        }
+}
+
+
+
+
+
+
+/* Styles for img slider */
+
+.comparison-slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    background-color: white;
+    height: 100%;
+}
+
+.comparison-slider {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    border: 5px white solid;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.comparison-slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.comparison-slider .resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    z-index: 2; /* Assurez-vous que l'image en noir et blanc est au-dessus */
+}
+
+.comparison-slider .resize img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%; /* Assurez-vous que l'image en noir et blanc est deux fois plus large */
+}
+
+.comparison-slider .divider {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color:  red;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    cursor: ew-resize;
+    z-index: 3; /* Assurez-vous que le diviseur est au-dessus */
+}
+
+.comparison-slider .divider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -9px;
+    top: 50%;
+    margin-top: -10px;
+    background-color: red;
+    transform: rotate(45deg);
+    transition: all 0.1s ease-in-out;
+}
+
+.comparison-slider .divider:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: -5px;
+    top: 50%;
+    margin-top: -6px;
+    background-color: white;
+    transform: rotate(45deg);
+    transition: all 0.1s ease-in-out;
+}
+
+/*Explorer*/
+/* Styles pour la barre de recherche */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-bar input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    margin-right: 1px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Styles pour le conteneur de la grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4%;
+    padding: 20px;
+    width: 90%; /* Prendre 90% de la largeur de la page */
+    margin: 0 auto; /* Centrer le conteneur */
+}
+
+.grid-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 15%;
+}
+
+.item-content {
+    height: 170px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Assurez-vous que l'image ne déborde pas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-content img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%; /* Ajustez la largeur de l'image à 100% */
+    height: auto; /* Maintenez les proportions de l'image */
+    object-fit: contain; /* Assurez-vous que l'image couvre l'espace disponible sans se déformer */
+}
+ 
+/* Conteneur pour aligner titre et note ensemble */
+.item-info {
+    display: flex;
+    justify-content: space-between; /* Sépare les éléments pour les espacer uniformément */
+    align-items: center; /* Aligne les éléments verticalement */
+    margin-bottom: 10px; /* Ajoute un espacement en bas */
+}
+
+/* Style pour le titre de l'item */
+.item-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize; /* Met la première lettre en majuscule */
+    margin: 0; /* Enlève les marges pour éviter un décalage avec la note */
+}
+
+/* Style pour la note moyenne avec une étoile */
+.item-rating {
+    font-size: 1.2em; /* Agrandit la taille du texte */
+    color: #555;
+    font-style: normal; /* Enlève l'italique */
+    display: flex;
+    align-items: center;
+    margin: 0; /* Enlève les marges pour éviter un décalage */
+}
+
+/* Style pour les étoiles de la note */
+.stars {
+    display: flex; /* Aligne les étoiles horizontalement */
+    margin-right: 5px; /* Espace entre les étoiles et la note */
+}
+
+.star {
+    font-size: 1.5em; /* Agrandit la taille des étoiles */
+    color: #ffcc00; /* Couleur dorée pour les étoiles */
+    margin-right: 5px; /* Espacement entre les étoiles */
+}
+
+/* Style pour la note moyenne */
+.avg-note {
+    font-size: 1.2em; /* Agrandit la taille du texte de la note */
+    color: #555;
+    font-style: normal; /* Enlève l'italique */
+}
+
+
+/*Message d'erreur*/
+.error-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffdddd;
+    border: 2px solid #ff5c5c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.error-message p {
+    margin: 0;
+    color: #d8000c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Message de succès */
+.success-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ddffdd;
+    border: 2px solid #5cb85c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.success-message p {
+    margin: 0;
+    color: #4cae4c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styles responsives */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .grid-item {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* PAGE DE PROFILE */
+
+
+
+.profile-page {
+    padding-top: 75px;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.profile-header {
+    background-color: #1DA1F2;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 2px solid #e1e8ed;
+}
+.profile-header-content {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.pseudo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.full-name {
+    font-size: 18px;
+    color: #b0c4de;
+    margin-bottom: 10px;
+}
+.profile-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.profile-stats div {
+    font-size: 16px;
+    color: #fff;
+}
+
+#idAchievement {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.classAchievement {
+    width: 22%;  /* Chaque trophée prendra environ 22% de la largeur disponible */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.classAchievement img {
+    width: 80%;  /* Taille de l'image à 80% de la largeur de la div */
+    max-width: 150px;  /* Taille maximale de l'image */
+    height: auto;
+    margin-bottom: 10px;  /* Espacement entre l'image et le texte */
+}
+
+.classAchievement p {
+    font-size: 14px;
+    color: #555;  /* Couleur du texte */
+    margin-top: 5px;
+}
+/* Style pour chaque trophée */
+.achievement {
+    width: 22%;  /* Chaque trophée prend 22% de la largeur de la fenêtre */
+    text-align: center;  /* Centre le texte sous chaque image */
+}
+
+/* Style pour les images des trophées */
+.achievement img {
+    width: 100%;  /* L'image prend 100% de la largeur du parent */
+    max-width: 100px;  /* Limite la taille de l'image pour qu'elle ne soit pas trop grande */
+    margin-bottom: 10px;  /* Espace entre l'image et le texte */
+}
+
+/* Style pour le texte sous l'image */
+.achievement p {
+    font-size: 14px;
+    color: #333;  /* Couleur du texte */
+    margin: 0;
+    padding: 0;
+}
+
+#idAchievementNbCrea1,#idAchievementNbCrea2,#idAchievementNbCrea3{
+    display: none;
+   }
+#idAchievement {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.achievement {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transform: scale(0.8);
+    position: relative;
+}
+
+.flowers {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    animation: flower-animation 2s infinite ease-in-out;
+}
+
+.flowers::before,
+.flowers::after {
+    content: "🌸"; /* Emoji de fleur */
+    font-size: 2rem;
+    animation: float 1.5s ease-in-out infinite;
+}
+
+.flowers::after {
+    animation-delay: 0.3s;
+}
+
+@keyframes flower-animation {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    50% { transform: translateX(-50%) rotate(360deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.achievement img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.achievement p {
+    font-size: 1.3rem;
+    color: #555;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.achievement:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background-color: #f3f3f3;
+}
+
+.achievement img:hover {
+    transform: rotate(15deg);
+}
+
+
+
+.biographie {
+    background-color: #fff;
+    color: #333;
+    margin-top: 30px;
+    padding: 10px 20px;
+    min-height: 50px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.follow-btn {
+    background-color: white;
+    color: #1DA1F2;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.follow-btn:hover {
+    background-color: #e1e8ed;
+}
+
+.creations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.image-container {
+    width: 100%;
+    height: 200px;
+    background-color: #93d4ff; 
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.card-footer {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    font-size: 16px;
+    border-top: 1px solid black;
+    
+}
+.title-card {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.likes-card{
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+#modal-image:hover {
+    transform: scale(1.01);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #555;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff5c5c;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse; /* Aligne les étoiles de droite à gauche */
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 35px;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.stars input[type="radio"]:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    color: #ffb400;
+    transform: scale(1.2);
+}
+
+#submitNoteButton {
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#submitNoteButton:hover {
+    background: linear-gradient(90deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Styles pour le bouton Filtrer */
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    border: 1px solid #4CAF50; /* Bordure assortie */
+    background-color: #4CAF50; /* Couleur de fond principale */
+    color: white; /* Couleur du texte */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold; /* Texte légèrement plus en gras */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Animations fluides */
+}
+
+.filter-button:hover {
+    background-color: #45a049; /* Couleur plus foncée au survol */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+}
+
+.filter-dropdown:hover .dropdown-content {
+    display: block; /* Affiche le menu lors du survol */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionné sous le bouton */
+    left: 0;
+    background-color: white; /* Fond blanc propre */
+    border: 1px solid #ddd; /* Bordure subtile */
+    border-radius: 5px; /* Coins arrondis pour le menu */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    z-index: 1;
+    overflow: hidden; /* Assure une découpe nette aux coins arrondis */
+    min-width: 300px; /* Taille minimale pour un design équilibré */
+}
+
+.dropdown-content .filter-option {
+    padding: 12px 15px; /* Plus d'espace interne */
+    color: #333; /* Texte gris foncé pour une meilleure lisibilité */
+    text-align: left; /* Alignement du texte à gauche */
+    cursor: pointer;
+    font-size: 14px;
+    background-color: white; /* Fond blanc par défaut */
+    border: none; /* Pas de bordure pour les options */
+    transition: background-color 0.3s, color 0.3s; /* Animations fluides */
+}
+
+.dropdown-content .filter-option:hover {
+    background-color: #f9f9f9; /* Légère couleur de fond au survol */
+    color: #4CAF50; /* Texte devient vert au survol */
+}
+
+/* Transition douce pour le menu principal */
+.dropdown-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* PAGE DE MODIF PROFILE */ 
+
+.form-container-modif {
+
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 40px 20px 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container-modif label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container-modif input, .form-container-modif textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container-modif button {
+            width: 100%;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submitButton-modif {
+            padding: 15px;
+            margin-top: 30px;
+            background: #259e00;
+        }
+        .changePassword, .changeMail {
+            background: #007BFF;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .photoModif {
+            width: 300px;
+            height: 300px;
+            border: 1px dashed #000;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .photoModif img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .labelModif {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .labelModif:hover {
+            background-color: #0056b3;
+        }
+
+        #fileInput {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        /* Styles pour les modales */
+        .modal-modifi {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-modif {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 450px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-modif label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .modal-modif input {
+            width: 95%;
+            padding: 10px;
+            margin-right: 50px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal-close-modif {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5e57;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+* FENETRE CONNEXION */
+/* Styles pour les modals */
+.modal-login, .modal-register, .modal-save{
+    display: none; /* Masquer par défaut */
+    position: fixed;
+    z-index: 1000; /* Z-index élevé pour afficher le modal au-dessus du reste de la page */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles pour les images */
+.grid-container img {
+    transition: filter 0.3s ease; /* Transition pour l'effet de filtre */
+}
+
+/* Empêcher l'effet de gris sur les images */
+.grid-container img.no-grayscale {
+    filter: none !important; /* Désactiver le filtre */
+}
+
+/* Autres styles */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.remember-me {
+    display: inline-flex;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.checkbox {
+    margin-right: 8px;
+    accent-color: #007bff; 
+    border-radius: 50%; 
+}
+
+.forgot-password {
+    color: #007bff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.register-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.register_link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register_link:hover {
+    text-decoration: underline;
+}
+
+.login-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.login_link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login_link:hover {
+    text-decoration: underline;
+}
+
+/* Drop Area Styles */
+#main-content {
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+#image-container {
+    width: 1200px;
+    height: 600px;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+#save {
+    float: right; 
+    margin-top: 10px;
+}
+
+#fileInput {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Result Styles import */
+
+/* TOOL BAR */
+#toolbar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+#toolbar h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* divs parametres */
+
+.parameter {
+    margin-bottom: 20px;
+}
+
+.parameter label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* inputs toolbar */
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Bouttons toolbar */
+
+
+
+
+.tb_buttons button {
+    width: 80%; 
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tb_buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+.tb_buttons button:hover {
+    background-color: #45a049;
+}
+
+
+
+#resultPatron {
+    display: none;
+}
+
+.result {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    text-align: center;
+}
+
+.result h2 {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.result-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.result-image img {
+    width: 85%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-text p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Styles for import page */
+@media (max-width: 1568px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #toolbar {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    #main-content {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .result {
+        width: 100%;
+    }
+
+    .result-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result-text {
+        max-width: 100%;
+    }
+
+          #image-container {
+            width: 90%; /* Largeur à 90% de la largeur de la page */
+            height: calc(90vw * 0.5); /* Hauteur à 50% de la largeur (90% * 0.5) */
+            border: 2px dashed #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        #image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajuster l'image pour couvrir le conteneur */
+        }
+}
+
+
+
+
+
+
+/* Styles for img slider */
+
+.comparison-slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    background-color: white;
+    height: 100%;
+}
+
+.comparison-slider {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    border: 5px white solid;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.comparison-slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.comparison-slider .resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    z-index: 2; /* Assurez-vous que l'image en noir et blanc est au-dessus */
+}
+
+.comparison-slider .resize img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%; /* Assurez-vous que l'image en noir et blanc est deux fois plus large */
+}
+
+.comparison-slider .divider {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color:  red;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    cursor: ew-resize;
+    z-index: 3; /* Assurez-vous que le diviseur est au-dessus */
+}
+
+.comparison-slider .divider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -9px;
+    top: 50%;
+    margin-top: -10px;
+    background-color: red;
+    transform: rotate(45deg);
+    transition: all 0.1s ease-in-out;
+}
+
+.comparison-slider .divider:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: -5px;
+    top: 50%;
+    margin-top: -6px;
+    background-color: white;
+    transform: rotate(45deg);
+    transition: all 0.1s ease-in-out;
+}
+
+/*Explorer*/
+/* Styles pour la barre de recherche */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-bar input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    margin-right: 1px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Styles pour le conteneur de la grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4%;
+    padding: 20px;
+    width: 90%; /* Prendre 90% de la largeur de la page */
+    margin: 0 auto; /* Centrer le conteneur */
+    height: 100%;
+}
+
+.grid-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 15%;
+}
+
+.item-content {
+    height: 170px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Assurez-vous que l'image ne déborde pas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Assurez-vous que l'image couvre l'espace disponible */
+}
+
+.item-title {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/*Message d'erreur*/
+.error-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffdddd;
+    border: 2px solid #ff5c5c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.error-message p {
+    margin: 0;
+    color: #d8000c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Message de succès */
+.success-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ddffdd;
+    border: 2px solid #5cb85c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.success-message p {
+    margin: 0;
+    color: #4cae4c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styles responsives */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .grid-item {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* PAGE DE PROFILE */
+
+
+
+.profile-page {
+    padding-top: 75px;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.profile-header {
+    background-color: #ffadad;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 2px solid #e1e8ed;
+}
+.profile-header-content {
+    position: relative; 
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.pseudo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.full-name {
+    font-size: 18px;
+    color: #b0c4de;
+    margin-bottom: 10px;
+}
+.profile-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.profile-stats div {
+    font-size: 16px;
+    color: #fff;
+}
+.biographie {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.follow-btn {
+    background-color: white;
+    color: #1DA1F2;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.follow-btn:hover {
+    background-color: #e1e8ed;
+}
+
+.creations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.image-container {
+    width: 100%;
+    height: 200px;
+    background-color: #93d4ff; 
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.card-footer {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    font-size: 16px;
+    border-top: 1px solid black;
+    
+}
+.title-card {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.likes-card{
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    width: 90%;
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+#modal-image {
+    max-width: 90vw; /* Ajustez la largeur de l'image à 90% */
+    max-height: 60vh; /* Ajustez la hauteur de l'image à 90% */
+    min-width: 80%;
+    min-height: 250px; /* Assurez-vous que les petites images sont agrandies */
+    width: auto; /* Maintenez les proportions de l'image */
+    height: auto; /* Maintenez les proportions de l'image */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    object-fit: contain; /* Assurez-vous que l'image couvre l'espace disponible sans se déformer */
+    overflow: auto;
+}
+
+
+.rating {
+    margin-top: 20px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 35px;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.stars label:hover,
+.stars input[type="radio"]:checked ~ label {
+    color: #ffb400;
+    transform: scale(1.2);
+}
+#submitNoteButton {
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#submitNoteButton:hover {
+    background: linear-gradient(90deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Styles pour le bouton Filtrer */
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    border: 1px solid #4CAF50; /* Bordure assortie */
+    background-color: #4CAF50; /* Couleur de fond principale */
+    color: white; /* Couleur du texte */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold; /* Texte légèrement plus en gras */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Animations fluides */
+}
+
+.filter-button:hover {
+    background-color: #45a049; /* Couleur plus foncée au survol */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+}
+
+.filter-dropdown:hover .dropdown-content {
+    display: block; /* Affiche le menu lors du survol */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionné sous le bouton */
+    left: 0;
+    background-color: white; /* Fond blanc propre */
+    border: 1px solid #ddd; /* Bordure subtile */
+    border-radius: 5px; /* Coins arrondis pour le menu */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    z-index: 10;
+    overflow: hidden; /* Assure une découpe nette aux coins arrondis */
+    min-width:220px; /* Taille minimale pour un design équilibré */
+}
+
+.dropdown-content .filter-option {
+    padding: 12px 15px; /* Plus d'espace interne */
+    color: #333; /* Texte gris foncé pour une meilleure lisibilité */
+    text-align: left; /* Alignement du texte à gauche */
+    cursor: pointer;
+    font-size: 14px;
+    background-color: white; /* Fond blanc par défaut */
+    border: none; /* Pas de bordure pour les options */
+    transition: background-color 0.3s, color 0.3s; /* Animations fluides */
+}
+
+.dropdown-content .filter-option:hover {
+    background-color: #f9f9f9; /* Légère couleur de fond au survol */
+    color: #4CAF50; /* Texte devient vert au survol */
+}
+
+/* Transition douce pour le menu principal */
+.dropdown-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TOGGLE STYLING */
+.toggle {
+    margin: 0 0 1.5rem;
+    box-sizing: border-box;
+    font-size: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.toggle input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -9999px;
+}
+
+.toggle input + label {
+    margin: 0;
+    padding: .75rem 2rem;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    border: solid 1px #DDD;
+    background-color: #FFF;
+    font-size: 1rem;
+    line-height: 140%;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out, flex-basis .3s ease-out;
+    flex: 1;
+}
+
+.toggle input + label:first-of-type {
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+}
+
+.toggle input + label:last-of-type {
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+}
+
+.toggle input:hover + label {
+    border-color: #213140;
+}
+
+.toggle input:checked + label {
+    background-color: #4B9DEA;
+    color: #FFF;
+    box-shadow: 0 0 10px rgba(102, 179, 251, 0.5);
+    border-color: #4B9DEA;
+    flex: 0 0 70%;
+}
+
+.toggle input:not(:checked) + label {
+    flex: 0 0 30%;
+}
+
+.toggle input:focus + label {
+    outline: dotted 1px #CCC;
+    outline-offset: .45rem;
+}
+
+@media (max-width: 800px) {
+    .toggle input + label {
+        padding: .75rem .25rem;
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* PAGE DE MODIF PROFILE */ 
+
+
+.centermessageinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+    
+
+.form-container-modif {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px 40px 20px 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container-modif label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container-modif input, .form-container-modif textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container-modif button {
+            width: 100%;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submitButton-modif {
+            padding: 15px;
+            margin-top: 30px;
+            background: #259e00;
+        }
+        .changePassword, .changeMail {
+            background: #007BFF;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .photoModif {
+            width: 300px;
+            height: 300px;
+            border: 1px dashed #000;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .photoModif img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .labelModif {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .labelModif:hover {
+            background-color: #0056b3;
+        }
+
+        #fileInput {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        /* Styles pour les modales */
+        .modal-modifi {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-modif {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 450px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-modif label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .modal-modif input {
+            width: 95%;
+            padding: 10px;
+            margin-right: 50px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal-close-modif {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5e57;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        /* Styles pour les modals */
+        .modal-forgotpassword {  
+            display: none; /* Masquer par défaut */
+            position: fixed;
+            z-index: 1000; /* Z-index élevé pour afficher le modal au-dessus du reste de la page */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .forgot-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+       
+        .re{
+            display: flex;
+            
+        }
+
+        .modalWr{
+            margin: auto;
+            align-items: center;
+            
+        }
+
+        .resetbtn{
+            width: 100%;
+            
+        }
+
+       #reset-password-form{
+        display: inline;
+        justify-content: center;
+        align-items: center;
+
+       }
+
+
+       .follow-btn {
+        background-color: #007BFF; 
+        color: white; 
+        padding: 10px 20px; 
+        font-size: 16px; 
+        font-weight: bold; 
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        position: absolute; 
+        top: 20px; 
+        right: 20px; 
+        transition: background-color 0.3s, transform 0.2s; 
+    }
+    
+    .follow-btn:hover {
+        background-color: #0056b3; 
+        transform: scale(1.05); 
+    }
+    #idAchievementNbCrea1,#idAchievementNbCrea2,#idAchievementNbCrea3{
+        display: none;
+       }
+    
+    #idAchievement {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    .achievement {
+        display: none;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        transform: scale(0.8);
+        position: relative;
+    }
+    
+    .flowers {
+        position: absolute;
+        top: -30px;
+        left: 80%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        animation: flower-animation 2s infinite ease-in-out;
+    }
+    
+    .flowers::before,
+    .flowers::after {
+        content: "🌸"; /* Emoji de fleur */
+        font-size: 2rem;
+        animation: float 1.5s ease-in-out infinite;
+    }
+    
+    .flowers::after {
+        animation-delay: 0.3s;
+    }
+    
+    @keyframes flower-animation {
+        0% { transform: translateX(-50%) rotate(0deg); }
+        50% { transform: translateX(-50%) rotate(360deg); }
+        100% { transform: translateX(-50%) rotate(0deg); }
+    }
+    
+    @keyframes float {
+        0% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-10px) rotate(45deg);
+        }
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+    }
+    
+    .achievement img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .achievement p {
+        font-size: 1.3rem;
+        color: #555;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .achievement:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        background-color: #f3f3f3;
+    }
+    
+    .achievement img:hover {
+        transform: rotate(15deg);
+    }
+    
+    
+    
+       .modal-content-explore{
+        background-color: #fff;
+        margin: 100px auto 0px auto;
+        padding: 25px;
+        width: 80%;
+        height: auto;
+        max-height: 80vh;
+        overflow: auto;
+        min-width: 300px;
+        max-width: 100%;
+       
+        border-radius: 12px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        animation: modalFadeIn 0.3s ease-out;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+    }/* Conteneur de la photo de profil */
+    /* Conteneur de la photo de profil */
+    .profile-section {
+        position: absolute; /* Position absolue pour placer en haut */
+        top: 76px; /* Distance du haut de la page */
+        left: 20%; /* Décalage à gauche de 30% par rapport à la largeur de l'écran */
+        transform: translateX(-50%); /* Ajuste le centrage pour rester légèrement à gauche */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+
+
+
+    
+    
+  
+        #modal-image-container {
+        padding-top: 20px;
+        height: auto;
+        width: auto;
+        max-height: 80%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: rgb(115, 115, 115);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    .next {
+        right: 0;
+        border-radius: 0 3px 3px 0;
+    }
+    
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+   
+    .modal-content-explore {
+        background-color: #fff;
+        margin: 100px auto 0px auto;
+        padding: 25px;
+        width: 80%;
+        height: auto; /* Ajuste automatiquement la hauteur */
+        min-width: 300px;
+        max-width: 100%;
+        max-height: 80vh; /* Hauteur maximale de 80% de la hauteur de la fenêtre */
+        border-radius: 12px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        animation: modalFadeIn 0.3s ease-out;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        position: relative;
+        overflow: auto; /* Ajoute une barre de défilement si le contenu est trop grand */
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    
+
+
+
+
+
+/* Conteneur de la photo de profil */
+.profile-section {
+    position: absolute; /* Position absolue pour placer en haut */
+    top: 76px; /* Distance du haut de la page */
+    left: 45%; /* Décalage à gauche de 30% par rapport à la largeur de l'écran */
+    transform: translateX(-50%); /* Ajuste le centrage pour rester légèrement à gauche */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Style de la photo de profil */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Ajuste bien l'image */
+    border: 3px solid #4CAF50; /* Bordure verte stylée */
+   margin-bottom: 20px;
+}
+
+
+
+
+
+
+.delete-button-container {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    display: flex;
+    justify-content: flex-end; 
+    width: calc(100% - 40px); 
+    box-sizing: border-box; 
+}
+
+.delete-button {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    padding: 10px 15px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px; /
+}
+
+.delete-button i {
+    margin-right: 5px; 
+}
+
+
+
+
+/* Style révisé pour mieux s'intégrer */
+#download-zip-btn {
+    background: #f8f9fa; /* Fond très clair */
+    color: #2c3e50; /* Texte foncé */
+    border: 2px solid #4CAF50; /* Bordure verte comme vos autres boutons */
+    padding: 8px 16px;
+    margin: 10px 0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: none; /* Supprime l'ombre */
+}
+
+/* Icône */
+#download-zip-btn::before {
+    content: "↓";
+    color: #4CAF50; /* Couleur verte pour l'icône */
+}
+
+/* États interactifs */
+#download-zip-btn:hover {
+    background: #4CAF50; /* Fond vert au survol */
+    color: white;
+}
+
+#download-zip-btn:hover::before {
+    color: white; /* Icône blanche au survol */
+}
+
+#download-zip-btn:active {
+    transform: scale(0.98);
+}
+
+/* Conteneur pour alignement */
+.download-button-container {
+    text-align: left; /* Aligné à gauche comme votre capture */
+    margin: 15px 0;
+    padding: 0 10px;
+}
+ 
+/* Position du conteneur */
+.confidentialité {
+    position: absolute; 
+    top: 19px; 
+    right: 130.8px; 
+    display: flex;
+    justify-content: flex-end; 
+    width: calc(100% - 40px); 
+    box-sizing: border-box; 
+}
+
+/* Style du bouton */
+.confidentialité-button {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    padding: 10px 15px; 
+    text-align: center;
+    text-decoration: none;
+    display: none;  /* Assure qu'il s'affiche bien */
+    align-items: center; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Effet au survol */
+.confidentialité-button:hover {
+    background-color: #45a049;
+}
+
+
+#loader {
+    display: none;
+    position: fixed; /* 🔥 Fixé par rapport à la fenêtre, pas au flux de la page */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Toujours au-dessus de tout */
+    text-align: center;
+  }
+  
+  #loader img {
+    width: 50px;
+    height: 50px;
+  }
+  
+
+  #filter-date {
+    background-color: white;
+    color: black;
+}
+
+#filter-date.tri-asc {
+    background-color: #4CAF50; /* vert */
+    color: white;
+    border-color: #4CAF50;
+}

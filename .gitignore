@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment & credentials
+.env
+.env.local
+.env.*.local
+config.json
+
+# Storage uploads
+storage/
+
+# Python virtual envs
+python/Projet/recommandation_facteurs/mon_env
+python/lesbrodeurs-appPython/
+lesbrodeurs-appPython/
+*.pyc
+__pycache__/
+
+# Large ML model files
+*.bin
+*.model
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite / IDE
+.vite/
+.idea/
+.vscode/
